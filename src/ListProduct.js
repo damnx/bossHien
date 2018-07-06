@@ -68,6 +68,12 @@ class ListProduct extends Component {
                     <div className='home-product-list'>
                         <div>
                             <table id="table-product">
+                                <tr>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Mô tả sản phẩm</th>
+                                    <th>Giá sản phẩm</th>
+                                    <th></th>
+                                </tr>
                                 <tbody>
                                     {this.renderListProduct()}
 
@@ -89,13 +95,13 @@ class ListProduct extends Component {
         for (let i = 0; i < data.length; i++) {
             row.push(<tr key={i}>
                 <td>
-                    <p>Tên sản phẩm: {data[i].name}</p>
+                    <p>{data[i].name}</p>
                 </td>
                 <td>
-                    <p>Mô tả sản phẩm: {data[i].description} </p>
+                    <p>{data[i].description} </p>
                 </td>
                 <td>
-                    <p>Giá sản phẩm: {data[i].price}  ₫</p>
+                    <p>{data[i].price}  ₫</p>
                 </td>
                 <td>
                     <Link onClick={this.viewDetail} to={'/product/' + data[i].id + '/detail'}>Xem</Link>

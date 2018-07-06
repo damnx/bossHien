@@ -56,6 +56,11 @@ class Cart extends Component {
                     <div className='home-product-list'>
                         <div type="flex" justify="center" align="top">
                             <table id="table-product">
+                                <tr>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Mô tả sản phẩm</th>
+                                    <th>Số lượng</th>
+                                </tr>
                                 <tbody>
                                     {this.renderListCart()}
                                 </tbody>
@@ -78,9 +83,13 @@ class Cart extends Component {
         for (let i = 0; i < data.length; i++) {
             row.push(<tr key={i}>
                 <td>
-                    <p>Tên sản phẩm: {data[i].name}</p>
-                    <p>Mô tả sản phẩm: {data[i].description} </p>
-                    <p>Số lượng: {data[i].number}</p>
+                    <p>{data[i].name}</p>
+                </td>
+                <td>
+                    <p>{data[i].description} </p>
+                </td>
+                <td>
+                    <p>{data[i].number}</p>
                 </td>
             </tr>)
         }
